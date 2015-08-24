@@ -36,6 +36,14 @@ function queuePush () {
 		target = queues[ queue ];
 	}
 
+	// Execute queue if it has not started.
+	if ( !queues[ queue ][ 0 ] ) {
+		setTimeout( function () {
+
+			executeNextTask( queue );
+		}, 0 );
+	}
+
 	if ( executing[ queue ] && target[ 0 ] ) {
 
 		if ( executing[ queue ] === target[ 0 ].id ) {
@@ -55,14 +63,6 @@ function queuePush () {
 			'id'       : id(),
 			'queue'    : []
 		} );
-	}
-
-	// Execute queue if it has not started.
-	if ( !executing[ queue ] ) {
-		setTimeout( function () {
-
-			executeNextTask( queue );
-		}, 0 );
 	}
 }
 
