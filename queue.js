@@ -14,7 +14,7 @@ function queuePush () {
 
 	var callBack;
 	var target;
-	var queue = '';
+	var queue = 'global';
 
 	if ( arguments[ 0 ] !== undefined && ( arguments.length === 2 || arguments.length === 3 ) ) {
 		queue    = arguments[ 0 ];
@@ -68,7 +68,7 @@ function queuePush () {
 
 function queueStop () {
 
-	var queue = '';
+	var queue = 'global';
 
 	if ( arguments[ 0 ] !== undefined ) {
 		queue = arguments[ 0 ];
@@ -81,7 +81,7 @@ function queueStop () {
 function executeNextTask () {
 
 	var target;
-	var queue = '';
+	var queue = 'global';
 
 	if ( arguments[ 0 ] !== undefined ) {
 		queue = arguments[ 0 ];
