@@ -116,5 +116,5 @@ function executeNextTask () {
 }
 
 module.exports = {
-	'push'  : queuePush
+	'push' : queuePush
 };
